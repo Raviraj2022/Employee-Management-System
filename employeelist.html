@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMPLOYEE MANAGEMENT SYSTEM</title>
+    <link rel="icon" type="image/jpg" href="logo.jpg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a href="dash.html" class="navbar-brand"
+          ><span>EMPLOYEE MANAGEMENT SYSTEM</span></a
+        >
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-target="#menu"
+          data-bs-toggle="collapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dash.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="employeelist.html">Employee List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="joblist.html">Job List</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-auto">
+            <div class="d-flex gap-2">
+              <input
+                type="search"
+                class="form-control-sm"
+                placeholder="search.."
+              />
+              <button type="submit" class="btn btn-sm btn-success me-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div style="color: white" class="vr"></div>
+            <a href="login.html" class="btn btn-sm btn-warning ms-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-power"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.5 1v7h1V1h-1z" />
+                <path
+                  d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
+                />
+              </svg>
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-2">
+          <div class="list-group">
+            <div class="list-group-item active">Employee Data</div>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action text-black list-group-item-dark"
+              data-bs-toggle="modal"
+              data-bs-target="#add_employee"
+            >
+              Add Employee</a
+            >
+            <a
+              href="employeelist.html"
+              class="list-group-item list-group-item-action list-group-item-dark text-black"
+              >View Employee</a
+            >
+          </div>
+          <div class="list-group mt-2">
+            <div class="list-group-item active">Related Links</div>
+            <a
+              href="joblist.html"
+              class="list-group-item list-group-item-action list-group-item-dark text-black"
+              >Job List</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-10">
+          <div class="card">
+            <div class="card-header text-bg-dark text-center fs-4">
+              Employee List
+            </div>
+            <table class="table table-bordered">
+              <tr class="table-secondary">
+                <th>SNO</th>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Email ID</th>
+                <th>Details</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>Ravi</td>
+                <td>raj@gmail.com</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-info"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employeedetails"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_edit"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_delete"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>102</td>
+                <td>Ravi</td>
+                <td>raj@gmail.com</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-info"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employeedetails"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_edit"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_delete"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>103</td>
+                <td>Ravi</td>
+                <td>raj@gmail.com</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-info"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employeedetails"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_edit"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_delete"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>104</td>
+                <td>Ravi</td>
+                <td>raj@gmail.com</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-info"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employeedetails"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_edit"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#employee_delete"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--Employee Details Model-->
+
+      <div class="modal" id="employeedetails">
+        <div class="modal-dailog modal-dailog-centered">
+          <div class="modal-content">
+            <div class="modal-header text-bg-dark text-white">
+              <h5>View Employee Details</h5>
+              <button
+                class="btn btn-close btn-close-white"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body p-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th>ID</th>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th>Employee Id</th>
+                  <td>101</td>
+                </tr>
+                <tr>
+                  <th>Employee Name</th>
+                  <td>Ravi</td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer border-0">
+              <a
+                href="#"
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#employee_edit"
+                >Edit Employee</a
+              >
+              <a href="#" class="btn btn-warning" data-bs-dismiss="modal"
+                >Close</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Edit Employee Modal Start-->
+      <div class="modal" id="employee_edit" data-bs-backdrop="static">
+        <div class="modal-dailog modal-dailog-centered">
+          <div class="modal-content">
+            <div class="modal-header text-bg-dark text-white">
+              <h5 class="w-100 text-center">Edit Employee Details</h5>
+              <button
+                class="btn btn-close btn-close-white"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="container">
+                  <div class="row mb-3">
+                    <div class="col-lg">
+                      <div class="form-floating">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="dt"
+                          value="2022-06-15"
+                        />
+                        <label class="form-label" for="dt">Joining Date</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-lg">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fm"
+                          value="name"
+                        />
+                        <label class="form-label" for="fm">First Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-lg">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="ln"
+                          value="middle"
+                        />
+                        <label class="form-label" for="ln">Last Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-lg">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mob"
+                          value="9876543210"
+                        />
+                        <label class="form-label" for="mob">Mobile No</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-lg">
+                      <div class="form-floating">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="mail"
+                          value="abc@gmail.com"
+                          placeholder="Email"
+                        />
+                        <label class="form-label" for="mail">E Mail</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-lg">
+                      <div class="form-floating">
+                        <select class="form-select" id="job">
+                          <option>Select Job</option>
+                          <option>Software Developer</option>
+                          <option selected="">Web Desiginer</option>
+                        </select>
+                        <label class="form-label" for="job">Job Title</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer border-0">
+              <button class="btn btn-success" type="submit">
+                Edit Employee
+              </button>
+              <a href="#" class="btn btn-warning" data-bs-dismiss="modal"
+                >Close</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Add modal start-->
+    </div>
+  </body>
+</html>
